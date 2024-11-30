@@ -13,6 +13,24 @@ class ViewController: UIViewController {
     
     override func loadView() {
         view = homeView
+        
+        let newNavigationTitle = UILabel()
+        let attributedTitle = UtilityFunctions.attributedNavigationTitle(text: "Arietta")
+        newNavigationTitle.attributedText = attributedTitle
+        navigationItem.titleView = newNavigationTitle
+        
+        homeView.buttonEarTraining.addTarget(self, action: #selector(handleButtonEarTraining), for: .touchUpInside)
+        homeView.buttonSightReading.addTarget(self, action: #selector (handleButtonSightReading), for: .touchUpInside)
+    }
+    
+    @objc func handleButtonEarTraining() {
+        let ETChooseLevelVC = EarTrainingChooseLevelViewController()
+        navigationController?.pushViewController(ETChooseLevelVC, animated: true)
+    }
+    
+    @objc func handleButtonSightReading() {
+        let SRChooseLevelVC = SightReadingChooseLevelViewController()
+        navigationController?.pushViewController(SRChooseLevelVC, animated: true)
     }
     
     override func viewDidLoad() {

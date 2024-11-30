@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class HomeView: UIView {
     
     var labelQuote: UILabel!
@@ -33,32 +34,15 @@ class HomeView: UIView {
         labelQuote.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(labelQuote)
         
-        buttonSightReading = UIButton()
-        buttonSightReading.setTitle("Sight Reading", for: .normal)
-        buttonSightReading.backgroundColor = UIColor(named: "AriettaButtonColor")
-        buttonSightReading.setTitleColor(UIColor(named:"AriettaBackgroundColor"), for: .normal)
-        buttonSightReading.layer.cornerRadius = 24
-        buttonSightReading.translatesAutoresizingMaskIntoConstraints = false
+        buttonSightReading = UtilityFunctions.getButton(title: "Sight Reading")
         self.addSubview(buttonSightReading)
         
-        buttonEarTraining = UIButton()
-        buttonEarTraining.setTitle("Ear Training", for: .normal)
-        buttonEarTraining.backgroundColor = UIColor(named: "AriettaButtonColor")
-        buttonEarTraining.setTitleColor(UIColor(named:"AriettaBackgroundColor"), for: .normal)
-        buttonEarTraining.layer.cornerRadius = 24
-        buttonEarTraining.translatesAutoresizingMaskIntoConstraints = false
+        buttonEarTraining = UtilityFunctions.getButton(title: "Ear Training")
         self.addSubview(buttonEarTraining)
         
-        buttonProgressReport = UIButton()
-        buttonProgressReport.setTitle("Progress Report", for: .normal)
-        buttonProgressReport.backgroundColor = UIColor(named: "AriettaButtonColor")
-        buttonProgressReport.setTitleColor(UIColor(named:"AriettaBackgroundColor"), for: .normal)
-        buttonProgressReport.layer.cornerRadius = 24
-        buttonProgressReport.translatesAutoresizingMaskIntoConstraints = false
+        buttonProgressReport = UtilityFunctions.getButton(title: "Progress Report")
         self.addSubview(buttonProgressReport)
     }
-    
-    
     
     func initConstraints() {
         NSLayoutConstraint.activate([

@@ -13,6 +13,12 @@ class ViewController: UIViewController {
     
     override func loadView() {
         view = homeView
+        
+        let newNavigationTitle = UILabel()
+        let attributedTitle = UtilityFunctions.attributedNavigationTitle(text: "Arietta")
+        newNavigationTitle.attributedText = attributedTitle
+        
+        navigationItem.titleView = newNavigationTitle
     }
     
     override func viewDidLoad() {

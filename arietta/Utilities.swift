@@ -48,13 +48,17 @@ struct UtilityFunctions {
         button.setTitleColor(UIColor(named:"AriettaBackgroundColor"), for: .normal)
         button.layer.cornerRadius = 24
         button.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            button.heightAnchor.constraint(equalToConstant: 50),
+            button.widthAnchor.constraint(equalToConstant: 328),
+        ])
         
         return button
     }
     
     /// Returns a UIButton for level selection. need to add subview and addTarget separately.
     static func getLevelButton(_ level: String) -> UIButton {
-        var button = UIButton(type: .custom)
+        let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 25 // Make it circular
         
@@ -68,6 +72,37 @@ struct UtilityFunctions {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         
         return button
+    }
+    
+    static private func getAttributedPlaceholder(_ placeholder: String) -> NSAttributedString {
+        let attributedPlaceholder = NSAttributedString(
+            string: placeholder,
+            attributes: [
+                .foregroundColor: UIColor.lightGray,
+                .font: UIFont(name: "Cabin-BoldItalic", size: 18) ?? UIFont.systemFont(ofSize: 18, weight: .regular),
+            ])
+
+        return attributedPlaceholder
+    }
+    
+    static func getTextField(placeholder: String)-> UITextField {
+        let textField = UITextField()
+        
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.attributedPlaceholder = getAttributedPlaceholder(placeholder)
+        textField.textColor = UIColor(named: "AriettaButtonColor")
+        textField.textAlignment = .center
+        
+        textField.layer.borderWidth = 2
+        textField.layer.cornerRadius = 25
+        textField.layer.borderColor = UIColor(named: "AriettaButtonColor")?.cgColor
+        
+        NSLayoutConstraint.activate([
+            textField.widthAnchor.constraint(equalToConstant: 328),
+            textField.heightAnchor.constraint(equalToConstant: 50),
+        ])
+        
+        return textField
     }
 }
 

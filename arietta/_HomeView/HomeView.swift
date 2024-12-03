@@ -50,21 +50,12 @@ class HomeView: UIView {
             labelQuote.centerYAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 200),
             
             buttonProgressReport.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            buttonProgressReport.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 32),
-            buttonProgressReport.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -32),
-            buttonProgressReport.heightAnchor.constraint(equalToConstant: 50),
             buttonProgressReport.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -26),
             
             buttonEarTraining.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            buttonEarTraining.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 32),
-            buttonEarTraining.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -32),
-            buttonEarTraining.heightAnchor.constraint(equalToConstant: 50),
             buttonEarTraining.bottomAnchor.constraint(equalTo: buttonProgressReport.topAnchor, constant: -24),
             
             buttonSightReading.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            buttonSightReading.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 32),
-            buttonSightReading.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -32),
-            buttonSightReading.heightAnchor.constraint(equalToConstant: 50),
             buttonSightReading.bottomAnchor.constraint(equalTo: buttonEarTraining.topAnchor, constant: -24),
         ])
     }

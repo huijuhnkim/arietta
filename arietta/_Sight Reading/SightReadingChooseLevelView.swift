@@ -13,15 +13,13 @@ class SightReadingChooseLevelView: UIView {
     var buttonLevelOne: UIButton!
     var buttonLevelTwo: UIButton!
     var buttonLevelThree: UIButton!
-    var buttonLevelFour: UIButton!
-    var buttonLevelFive: UIButton!
     var buttonStart: UIButton!
     
     private var activeButton: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .white
+        backgroundColor = UIColor(named:"AriettaBackgroundColor")
         
         setupLabelChooseLevel()
         setupButtonLevel()
@@ -46,22 +44,16 @@ class SightReadingChooseLevelView: UIView {
         buttonLevelOne = UtilityFunctions.getLevelButton("1")
         buttonLevelTwo = UtilityFunctions.getLevelButton("2")
         buttonLevelThree = UtilityFunctions.getLevelButton("3")
-        buttonLevelFour = UtilityFunctions.getLevelButton("4")
-        buttonLevelFive = UtilityFunctions.getLevelButton("5")
         
         // Add the button to the view
         self.addSubview(buttonLevelOne)
         self.addSubview(buttonLevelTwo)
         self.addSubview(buttonLevelThree)
-        self.addSubview(buttonLevelFour)
-        self.addSubview(buttonLevelFive)
         
         // Add action for the button tap
         buttonLevelOne.addTarget(self, action: #selector(levelButtonTapped(_:)), for: .touchUpInside)
         buttonLevelTwo.addTarget(self, action: #selector(levelButtonTapped(_:)), for: .touchUpInside)
         buttonLevelThree.addTarget(self, action: #selector(levelButtonTapped(_:)), for: .touchUpInside)
-        buttonLevelFour.addTarget(self, action: #selector(levelButtonTapped(_:)), for: .touchUpInside)
-        buttonLevelFive.addTarget(self, action: #selector(levelButtonTapped(_:)), for: .touchUpInside)
     }
     
     @objc func levelButtonTapped(_ sender: UIButton) {
@@ -93,36 +85,24 @@ class SightReadingChooseLevelView: UIView {
     func initConstraints() {
         NSLayoutConstraint.activate([
             labelChooseLevel.topAnchor.constraint(equalTo: self.topAnchor, constant: 337),
-            labelChooseLevel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 52),
+            labelChooseLevel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             
             buttonLevelOne.topAnchor.constraint(equalTo: labelChooseLevel.bottomAnchor, constant: 17),
-            buttonLevelOne.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 45),
+            buttonLevelOne.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 99),
             buttonLevelOne.widthAnchor.constraint(equalToConstant: 50),
             buttonLevelOne.heightAnchor.constraint(equalToConstant: 50),
             
             buttonLevelTwo.topAnchor.constraint(equalTo: labelChooseLevel.bottomAnchor, constant: 17),
-            buttonLevelTwo.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 108),
+            buttonLevelTwo.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 171),
             buttonLevelTwo.widthAnchor.constraint(equalToConstant: 50),
             buttonLevelTwo.heightAnchor.constraint(equalToConstant: 50),
             
             buttonLevelThree.topAnchor.constraint(equalTo: labelChooseLevel.bottomAnchor, constant: 17),
-            buttonLevelThree.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 171),
+            buttonLevelThree.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 243),
             buttonLevelThree.widthAnchor.constraint(equalToConstant: 50),
             buttonLevelThree.heightAnchor.constraint(equalToConstant: 50),
             
-            buttonLevelFour.topAnchor.constraint(equalTo: labelChooseLevel.bottomAnchor, constant: 17),
-            buttonLevelFour.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 234),
-            buttonLevelFour.widthAnchor.constraint(equalToConstant: 50),
-            buttonLevelFour.heightAnchor.constraint(equalToConstant: 50),
-            
-            buttonLevelFive.topAnchor.constraint(equalTo: labelChooseLevel.bottomAnchor, constant: 17),
-            buttonLevelFive.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 297),
-            buttonLevelFive.widthAnchor.constraint(equalToConstant: 50),
-            buttonLevelFive.heightAnchor.constraint(equalToConstant: 50),
-            
-            buttonStart.heightAnchor.constraint(equalToConstant: 50),
-            buttonStart.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 32),
-            buttonStart.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -32),
+            buttonStart.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             buttonStart.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -39),
         ])
     }

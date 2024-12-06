@@ -7,31 +7,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "644BD271-3FDC-4763-BACB-C37390C71D1E"
+            uuid = "80A6CB24-66C0-49F0-AD26-2B792EACEE81"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "arietta/_Sight Reading/Exercise/SightReadingExerciseView.swift"
+            filePath = "arietta/_Ear Training/Exercise/EarTrainingExerciseView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "onButtonReferenceNoteTapped(_:)"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "EarTrainingExerciseView"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4CFE5DF9-7312-45AB-9BBD-7D572851BE24"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "arietta/_Ear Training/Exercise/EarTrainingExerciseView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "setupAudioButtons()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "ADED87EB-8052-4F98-9A91-1977B50817C6"
+            uuid = "078FECFA-8ADD-46F2-9900-F489203D5DCA"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "arietta/_Sight Reading/Exercise/SightReadingExerciseView.swift"
+            filePath = "arietta/_Ear Training/Exercise/EarTrainingExerciseView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "onButtonReferenceNoteTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>

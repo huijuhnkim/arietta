@@ -22,6 +22,12 @@ class EarTrainingChooseLevelViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        ETChooseLevelView.buttonStart.addTarget(self, action: #selector(onButtonStartTapped), for: .touchUpInside)
+    }
+    
+    @objc func onButtonStartTapped() {
+        let ETExerciseVC = EarTrainingExerciseViewController()
+        navigationController?.pushViewController(ETExerciseVC, animated: true)
     }
 }

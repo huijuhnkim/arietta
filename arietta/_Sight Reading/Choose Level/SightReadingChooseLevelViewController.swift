@@ -22,6 +22,12 @@ class SightReadingChooseLevelViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        SRCChooseLevelView.buttonStart.addTarget(self, action: #selector(onButtonStartTapped), for:.touchUpInside)
+    }
+    
+    @objc func onButtonStartTapped() {
+        let SRExerciseVC = SightReadingExerciseViewController()
+        navigationController?.pushViewController(SRExerciseVC, animated: true)
     }
 }

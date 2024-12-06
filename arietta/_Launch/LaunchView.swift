@@ -32,7 +32,7 @@ class LaunchView: UIView {
         labelTitle.font = UIFont(name: "Besley-ExtraBoldItalic", size: 60)
         self.addSubview(labelTitle)
         
-        buttonSignIn = UtilityFunctions.getButton(title: "Sign In")
+        buttonSignIn = UtilityFunctions.getFilledButton(title: "Sign In")
         self.addSubview(buttonSignIn)
         
         buttonSignUp = UIButton()

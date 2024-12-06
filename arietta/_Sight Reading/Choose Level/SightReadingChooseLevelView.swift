@@ -56,6 +56,11 @@ class SightReadingChooseLevelView: UIView {
         buttonLevelThree.addTarget(self, action: #selector(levelButtonTapped(_:)), for: .touchUpInside)
     }
     
+    func setupButtonStart() {
+        buttonStart = UtilityFunctions.getFilledButton(title: "Start")
+        self.addSubview(buttonStart)
+    }
+    
     @objc func levelButtonTapped(_ sender: UIButton) {
         // Check the current background color and toggle
         if let previousButton = activeButton {
@@ -75,11 +80,6 @@ class SightReadingChooseLevelView: UIView {
         
         // Update active button
         activeButton = sender
-    }
-    
-    func setupButtonStart() {
-        buttonStart = UtilityFunctions.getButton(title: "Start")
-        self.addSubview(buttonStart)
     }
     
     func initConstraints() {

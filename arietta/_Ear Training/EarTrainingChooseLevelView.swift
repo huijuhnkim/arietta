@@ -78,7 +78,7 @@ class EarTrainingChooseLevelView: UIView {
     }
     
     func setupButtonStart() {
-        buttonStart = UtilityFunctions.getButton(title: "Start")
+        buttonStart = UtilityFunctions.getFilledButton(title: "Start")
         self.addSubview(buttonStart)
     }
     

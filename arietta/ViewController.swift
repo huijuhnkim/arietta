@@ -10,12 +10,11 @@ import UIKit
 class ViewController: UIViewController {
     
     let homeView = HomeView()
-    let launchView = LaunchView()
-    let signUpView = SignUpView()
-    let signInView = SignInView()
+    let SRlevelView = SightReadingChooseLevelView()
+    let SRExerciseView = SightReadingExerciseView()
     
     override func loadView() {
-        view = signInView
+        view = homeView
         
         let newNavigationTitle = UILabel()
         let attributedTitle = UtilityFunctions.attributedNavigationTitle(text: "Arietta")

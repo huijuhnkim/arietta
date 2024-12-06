@@ -63,7 +63,7 @@ class SignUpView: UIView {
         textFieldConfirmPassword.isSecureTextEntry = true
         addSubview(textFieldConfirmPassword)
         
-        buttonSignUp = UtilityFunctions.getButton(title: "Sign Up")
+        buttonSignUp = UtilityFunctions.getFilledButton(title: "Sign Up")
         addSubview(buttonSignUp)
     }
     

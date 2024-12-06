@@ -50,7 +50,7 @@ class SignInView: UIView {
         textFieldPassword.isSecureTextEntry = true
         addSubview(textFieldPassword)
         
-        buttonSignIn = UtilityFunctions.getButton(title: "Sign In")
+        buttonSignIn = UtilityFunctions.getFilledButton(title: "Sign In")
         addSubview(buttonSignIn)
         
         buttonForgotPassword = UIButton()

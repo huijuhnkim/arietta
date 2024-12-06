@@ -41,12 +41,28 @@ struct UtilityFunctions {
     }
     
     /// Returns a filled button matching UI design. Need to set height to 50 in UIView.
-    static func getButton(title: String) -> UIButton {
+    static func getFilledButton(title: String) -> UIButton {
         let button = UIButton()
         button.backgroundColor = UIColor(named: "AriettaButtonColor")
         button.setAttributedTitle(attributedWhiteBodyText(text: title, fontSize: 18), for: .normal)
-        button.setTitleColor(UIColor(named:"AriettaBackgroundColor"), for: .normal)
         button.layer.cornerRadius = 24
+        button.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            button.heightAnchor.constraint(equalToConstant: 50),
+            button.widthAnchor.constraint(equalToConstant: 328),
+        ])
+        
+        return button
+    }
+    
+    /// Returns a filled button matching UI design. Need to set height to 50 in UIView.
+    static func getStrokedButton(title: String) -> UIButton {
+        let button = UIButton()
+        button.backgroundColor = UIColor(named: "AriettaBackgroundColor")
+        button.setAttributedTitle(attributedBlackBodyText(text: title, fontSize: 18), for: .normal)
+        button.layer.cornerRadius = 24
+        button.layer.borderWidth = 2
+        button.layer.borderColor = UIColor(named:"AriettaButtonColor")?.cgColor
         button.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             button.heightAnchor.constraint(equalToConstant: 50),

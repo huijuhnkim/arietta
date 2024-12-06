@@ -34,13 +34,13 @@ class HomeView: UIView {
         labelQuote.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(labelQuote)
         
-        buttonSightReading = UtilityFunctions.getButton(title: "Sight Reading")
+        buttonSightReading = UtilityFunctions.getFilledButton(title: "Sight Reading")
         self.addSubview(buttonSightReading)
         
-        buttonEarTraining = UtilityFunctions.getButton(title: "Ear Training")
+        buttonEarTraining = UtilityFunctions.getFilledButton(title: "Ear Training")
         self.addSubview(buttonEarTraining)
         
-        buttonProgressReport = UtilityFunctions.getButton(title: "Progress Report")
+        buttonProgressReport = UtilityFunctions.getFilledButton(title: "Progress Report")
         self.addSubview(buttonProgressReport)
     }
     

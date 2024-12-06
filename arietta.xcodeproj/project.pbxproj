@@ -11,7 +11,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		F47358862CED6FA7000CF4EC /* Exceptions for "arietta" folder in "arietta" target */ = {
+		F4935CBB2D02843B00DF7D3C /* Exceptions for "arietta" folder in "arietta" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -21,10 +21,10 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		F47358762CED6FA6000CF4EC /* arietta */ = {
+		F4935C832D02843A00DF7D3C /* arietta */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				F47358862CED6FA7000CF4EC /* Exceptions for "arietta" folder in "arietta" target */,
+				F4935CBB2D02843B00DF7D3C /* Exceptions for "arietta" folder in "arietta" target */,
 			);
 			path = arietta;
 			sourceTree = "<group>";
@@ -45,8 +45,8 @@
 		F473586B2CED6FA6000CF4EC = {
 			isa = PBXGroup;
 			children = (
-				F47358762CED6FA6000CF4EC /* arietta */,
 				F47358752CED6FA6000CF4EC /* Products */,
+				F4935C832D02843A00DF7D3C /* arietta */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,7 +74,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				F47358762CED6FA6000CF4EC /* arietta */,
+				F4935C832D02843A00DF7D3C /* arietta */,
 			);
 			name = arietta;
 			packageProductDependencies = (

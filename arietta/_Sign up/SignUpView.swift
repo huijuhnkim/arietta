@@ -8,6 +8,9 @@
 import UIKit
 
 class SignUpView: UIView {
+    
+    var labelUserName: UILabel!
+    var textFieldUserName: UITextField!
 
     var labelEmail: UILabel!
     var textFieldEmail: UITextField!
@@ -33,6 +36,16 @@ class SignUpView: UIView {
 
     
     func setupComponents() {
+        labelUserName = UILabel()
+        labelUserName.translatesAutoresizingMaskIntoConstraints = false
+        labelUserName.attributedText = UtilityFunctions.attributedBlackBodyText(text: "User Name", fontSize: 18)
+        addSubview(labelUserName)
+        
+        textFieldUserName = UtilityFunctions.getTextField(placeholder: "Enter Your User Name")
+        textFieldUserName.textContentType = .username
+        textFieldUserName.autocapitalizationType = .none
+        addSubview(textFieldUserName)
+        
         labelEmail = UILabel()
         labelEmail.translatesAutoresizingMaskIntoConstraints = false
         labelEmail.attributedText = UtilityFunctions.attributedBlackBodyText(text: "Email", fontSize: 18)
@@ -50,7 +63,7 @@ class SignUpView: UIView {
         
         textFieldPassword = UtilityFunctions.getTextField(placeholder: "Enter Your Password")
         textFieldPassword.textContentType = .password
-        textFieldPassword.isSecureTextEntry = true
+        // textFieldPassword.isSecureTextEntry = true
         addSubview(textFieldPassword)
         
         labelConfirmPassword = UILabel()
@@ -60,7 +73,7 @@ class SignUpView: UIView {
         
         textFieldConfirmPassword = UtilityFunctions.getTextField(placeholder: "Re-enter Password")
         textFieldConfirmPassword.textContentType = .password
-        textFieldConfirmPassword.isSecureTextEntry = true
+        // textFieldConfirmPassword.isSecureTextEntry = true
         addSubview(textFieldConfirmPassword)
         
         buttonSignUp = UtilityFunctions.getFilledButton(title: "Sign Up")
@@ -69,7 +82,20 @@ class SignUpView: UIView {
     
     func initConstraints() {
         NSLayoutConstraint.activate([
-            labelEmail.topAnchor.constraint(equalTo: self.topAnchor, constant: 276),
+//            labelEmail.topAnchor.constraint(equalTo: self.topAnchor, constant: 276),
+//            labelEmail.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 52),
+//            
+//            textFieldEmail.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+//            textFieldEmail.topAnchor.constraint(equalTo: labelEmail.bottomAnchor, constant: 7),
+            
+            
+            labelUserName.topAnchor.constraint(equalTo: self.topAnchor, constant: 244),
+            labelUserName.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 52),
+            
+            textFieldUserName.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            textFieldUserName.topAnchor.constraint(equalTo: labelUserName.bottomAnchor, constant: 7),
+            
+            labelEmail.topAnchor.constraint(equalTo: textFieldUserName.bottomAnchor, constant: 32),
             labelEmail.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 52),
             
             textFieldEmail.centerXAnchor.constraint(equalTo: self.centerXAnchor),

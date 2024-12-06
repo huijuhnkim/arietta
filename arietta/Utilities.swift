@@ -35,12 +35,12 @@ struct UtilityFunctions {
     static func attributedBlackBodyText(text: String, fontSize: CGFloat) -> NSAttributedString {
         let attributes: [NSAttributedString.Key: Any] = [
             .font: UIFont(name: "Cabin-BoldItalic", size: fontSize) ?? UIFont.systemFont(ofSize: fontSize, weight: .regular),
-            .foregroundColor: UIColor(named: "AriettaButtonColor") ?? .white
+            .foregroundColor: UIColor(named: "AriettaButtonColor") ?? .black
         ]
         return NSAttributedString(string: text, attributes: attributes)
     }
     
-    /// Returns a filled button matching UI design. Need to set height to 50 in UIView.
+    /// Returns a filled button matching UI design.
     static func getFilledButton(title: String) -> UIButton {
         let button = UIButton()
         button.backgroundColor = UIColor(named: "AriettaButtonColor")
@@ -55,7 +55,7 @@ struct UtilityFunctions {
         return button
     }
     
-    /// Returns a filled button matching UI design. Need to set height to 50 in UIView.
+    /// Returns a filled button matching UI design.
     static func getStrokedButton(title: String) -> UIButton {
         let button = UIButton()
         button.backgroundColor = UIColor(named: "AriettaBackgroundColor")
@@ -89,6 +89,41 @@ struct UtilityFunctions {
         
         return button
     }
+    
+    /// Returns a filled UIButton for keyboard.
+    static func getBlackKeyboardButton(note: String) -> UIButton {
+        let button = UIButton(type: .custom)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = UIColor(named: "AriettaButtonColor")
+        button.setAttributedTitle(attributedWhiteBodyText(text: note, fontSize: 18), for: .normal)
+        button.layer.cornerRadius = 24
+        
+        NSLayoutConstraint.activate([
+            button.heightAnchor.constraint(equalToConstant: 118),
+            button.widthAnchor.constraint(equalToConstant: 48)
+        ])
+        
+        return button
+    }
+    
+    /// Returns a stroked UIButton for keyboard.
+    static func getWhiteKeyboardButton(note: String) -> UIButton {
+        let button = UIButton(type: .custom)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setAttributedTitle(attributedBlackBodyText(text: note, fontSize: 18), for: .normal)
+        button.layer.cornerRadius = 24
+        button.layer.borderWidth = 2
+        button.layer.borderColor = UIColor(named:"AriettaButtonColor")?.cgColor
+        button.translatesAutoresizingMaskIntoConstraints = false
+                
+        NSLayoutConstraint.activate([
+            button.heightAnchor.constraint(equalToConstant: 118),
+            button.widthAnchor.constraint(equalToConstant: 48)
+        ])
+        
+        return button
+    }
+    
     
     static private func getAttributedPlaceholder(_ placeholder: String) -> NSAttributedString {
         let attributedPlaceholder = NSAttributedString(

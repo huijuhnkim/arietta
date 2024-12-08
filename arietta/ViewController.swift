@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     let homeView = HomeView()
     let SRlevelView = SightReadingChooseLevelView()
     let SRExerciseView = SightReadingExerciseView()
+    let SRResultsView = SightReadingResultsView()
     
     override func loadView() {
         view = homeView

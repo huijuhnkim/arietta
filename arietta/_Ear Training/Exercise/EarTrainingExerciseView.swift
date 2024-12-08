@@ -9,7 +9,7 @@ import UIKit
 
 class EarTrainingExerciseView: UIView {
     
-    
+    var labelProgress: UILabel!
     var buttonReferenceNote: UIButton!
     var buttonPressToListen: UIButton!
     
@@ -33,6 +33,7 @@ class EarTrainingExerciseView: UIView {
         super.init(frame: frame)
         backgroundColor = UIColor(named: "AriettaBackgroundColor")
         
+        setupLabelProgress()
         setupAudioButtons()
         setupKeyboard()
         setupButtonSubmit()
@@ -41,6 +42,14 @@ class EarTrainingExerciseView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setupLabelProgress(){
+        labelProgress = UILabel()
+        labelProgress.textAlignment = .center
+        labelProgress.font = UIFont.boldSystemFont(ofSize: 27)
+        labelProgress.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(labelProgress)
     }
     
     func setupAudioButtons() {
@@ -117,6 +126,7 @@ class EarTrainingExerciseView: UIView {
     }
     
     @objc func onButtonWhiteKeyboardTapped(_ sender: UIButton) {
+        
         if !sender.isSelected {
             sender.layer.borderWidth = 5
             sender.isSelected = true
@@ -149,6 +159,9 @@ class EarTrainingExerciseView: UIView {
     
     func initConstraints() {
         NSLayoutConstraint.activate([
+            labelProgress.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
+            labelProgress.topAnchor.constraint(equalTo: self.topAnchor, constant: 60),
+            
             buttonReferenceNote.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             buttonReferenceNote.topAnchor.constraint(equalTo: self.topAnchor, constant: 280),
             

@@ -10,9 +10,9 @@ import UIKit
 class SightReadingResultsViewController: UIViewController {
 
     let SRResultsView = SightReadingResultsView()
-    
+   
     var result = 4
-    
+
     override func loadView() {
         view = SRResultsView
     }

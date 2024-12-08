@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     let homeView = HomeView()
     let SRlevelView = SightReadingChooseLevelView()
     let SRExerciseView = SightReadingExerciseView()
+    let SRResultsView = SightReadingResultsView()
     
     var handleAuth: AuthStateDidChangeListenerHandle?
     var currentUser:FirebaseAuth.User?
@@ -29,44 +30,45 @@ class ViewController: UIViewController {
         
         homeView.buttonEarTraining.addTarget(self, action: #selector(handleButtonEarTraining), for: .touchUpInside)
         homeView.buttonSightReading.addTarget(self, action: #selector (handleButtonSightReading), for: .touchUpInside)
-        homeView.buttonProgressReport.addTarget(self, action: #selector (handleButtonProgressReport), for: .touchUpInside)
+        homeView.buttonProfile.addTarget(self, action: #selector(handleButtonProfile), for: .touchUpInside)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+//     override func viewWillAppear(_ animated: Bool) {
+//         super.viewWillAppear(animated)
         
-        //MARK: handling if the Authentication state is changed (sign in, sign out, register)...
-        handleAuth = Auth.auth().addStateDidChangeListener { [weak self] auth, user in
-            guard let self = self else { return }
+//         //MARK: handling if the Authentication state is changed (sign in, sign out, register)...
+//         handleAuth = Auth.auth().addStateDidChangeListener { [weak self] auth, user in
+//             guard let self = self else { return }
 
-            if user == nil {
-                DispatchQueue.main.async {
-                    let signInViewController = SignInViewController()
-                    self.navigationController?.pushViewController(signInViewController, animated: true)
-                }
-            } else {
-                self.currentUser = user
-            }
-        }
-        self.showRandomQuote()
-    }
+//             if user == nil {
+//                 DispatchQueue.main.async {
+//                     let signInViewController = SignInViewController()
+//                     self.navigationController?.pushViewController(signInViewController, animated: true)
+//                 }
+//             } else {
+//                 self.currentUser = user
+//             }
+//         }
+//         self.showRandomQuote()
+//     }
     
-    func showRandomQuote() {
-        let quoteDocument = db.collection("quotes").document("quotes")
+//     func showRandomQuote() {
+//         let quoteDocument = db.collection("quotes").document("quotes")
         
-        quoteDocument.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data()
-                if let quotes = dataDescription?.values.compactMap({ $0 as? String }) {
-                    let randomQuote = quotes.randomElement() ?? "No quote found"
-                    print("Random Quote: \(randomQuote)")
-                    self.homeView.labelQuote.text = randomQuote
-                }
-            } else {
-                print("Document does not exist or error: \(error?.localizedDescription ?? "unknown error")")
-            }
-        }
-    }
+//         quoteDocument.getDocument { (document, error) in
+//             if let document = document, document.exists {
+//                 let dataDescription = document.data()
+//                 if let quotes = dataDescription?.values.compactMap({ $0 as? String }) {
+//                     let randomQuote = quotes.randomElement() ?? "No quote found"
+//                     print("Random Quote: \(randomQuote)")
+//                     self.homeView.labelQuote.text = randomQuote
+//                 }
+//             } else {
+//                 print("Document does not exist or error: \(error?.localizedDescription ?? "unknown error")")
+//             }
+//         }
+
+//     }
     
     @objc func handleButtonEarTraining() {
         let ETChooseLevelVC = EarTrainingChooseLevelViewController()
@@ -78,7 +80,10 @@ class ViewController: UIViewController {
         navigationController?.pushViewController(SRChooseLevelVC, animated: true)
     }
     
-    @objc func handleButtonProgressReport() {
+
+    @objc func handleButtonProfile() {
+        let profileVC = ProfileViewController()
+        navigationController?.pushViewController(profileVC, animated: true)
     }
     
     override func viewDidLoad() {

@@ -28,6 +28,7 @@ class SightReadingChooseLevelViewController: UIViewController {
     
     @objc func onButtonStartTapped() {
         let SRExerciseVC = SightReadingExerciseViewController()
+        SRExerciseVC.level = SRCChooseLevelView.level
         navigationController?.pushViewController(SRExerciseVC, animated: true)
     }
 }

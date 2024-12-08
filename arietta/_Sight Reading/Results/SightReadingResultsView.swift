@@ -29,12 +29,12 @@ class SightReadingResultsView: UIView {
     func setup() {
         labelTotal = UILabel()
         labelTotal.translatesAutoresizingMaskIntoConstraints = false
-        labelTotal.attributedText = UtilityFunctions.attributedBlackBodyText(text: "/ 5", fontSize: 48)
+        labelTotal.attributedText = UtilityFunctions.attributedBlackBodyText(text: "/ 4", fontSize: 48)
         addSubview(labelTotal)
         
         labelResult = UILabel()
         labelResult.translatesAutoresizingMaskIntoConstraints = false
-        labelResult.attributedText = UtilityFunctions.attributedBlackBodyText(text: "5", fontSize: 120)
+        labelResult.attributedText = UtilityFunctions.attributedBlackBodyText(text: "4", fontSize: 120)
         addSubview(labelResult)
         
         buttonRetry = UtilityFunctions.getFilledButton(title: "Retry")

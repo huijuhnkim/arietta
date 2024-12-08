@@ -127,7 +127,7 @@ class EarTrainingExerciseViewController: UIViewController {
             currentQuestion += 1
             startNextQuestion()
             } else {
-                let resultsVC = EarTrainingResultsViewController(score: score)
+                let resultsVC = EarTrainingResultsViewController(score: score, selectedDifficulty: selectedDifficulty)
                 navigationController?.pushViewController(resultsVC, animated: true)
                 }
             }
@@ -198,7 +198,12 @@ class EarTrainingExerciseViewController: UIViewController {
             }
     
         // play audio file according to difficulty level and the randomly chosen note
-        @objc func playPressToListenNote(){
+    @objc func playPressToListenNote(){
+        
+        ETExercise.buttonPressToListen.isSelected.toggle()
+        
+        if ETExercise.buttonPressToListen.isSelected {
+            ETExercise.buttonPressToListen.backgroundColor = UIColor(named: "AriettaRed")
             // level 3 has different formatting and has two notes instead of one
             if selectedDifficulty == 3 {
                 let notePlay = correctNote.compactMap{ $0 }.joined(separator:"-")
@@ -207,18 +212,38 @@ class EarTrainingExerciseViewController: UIViewController {
                 if let singleNote = correctNote.first ?? nil {
                     let notePlay = "level\(selectedDifficulty)-" + singleNote
                     playNoteAudio(note: notePlay)
-                    print(notePlay)
-                    }
+                }
                 else {
                     print("Cannot find audio file to play.")
-                    }
                 }
+            }
+            // go back to default background color after 0.3 seconds
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.ETExercise.buttonPressToListen.backgroundColor = UIColor(named: "AriettaButtonColor")
+                self.ETExercise.buttonPressToListen.isSelected = false
+            }
         }
+        else {
+            ETExercise.buttonPressToListen.backgroundColor = UIColor(named:"AriettaButtonColor")
+        }
+    }
         
     // play reference note C
-        @objc func playReferenceNote(){
-                playNoteAudio(note: "referenceNote")
+    @objc func playReferenceNote(){
+        ETExercise.buttonReferenceNote.isSelected.toggle()
+        
+        if ETExercise.buttonReferenceNote.isSelected {
+            ETExercise.buttonReferenceNote.backgroundColor = UIColor(named: "AriettaGreen")
+            playNoteAudio(note: "referenceNote")
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
+                self.ETExercise.buttonReferenceNote.backgroundColor = UIColor(named:"AriettaBackgroundColor")
+                self.ETExercise.buttonReferenceNote.isSelected = false
             }
+        } else {
+            ETExercise.buttonReferenceNote.backgroundColor = UIColor(named:"AriettaBackgroundColor")
+        }
+    }
     
     // play audio file with given note
         func playNoteAudio(note: String){

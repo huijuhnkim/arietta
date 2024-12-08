@@ -56,33 +56,11 @@ class EarTrainingExerciseView: UIView {
         buttonReferenceNote = UtilityFunctions.getStrokedButton(title: "Reference Note (C)")
         buttonReferenceNote.isSelected = false
         addSubview(buttonReferenceNote)
-        buttonReferenceNote.addTarget(self, action: #selector(onButtonReferenceNoteTapped), for: .touchUpInside)
 
-        
+    
         buttonPressToListen = UtilityFunctions.getFilledButton(title: "Press to Listen")
         buttonPressToListen.isSelected = false
         addSubview(buttonPressToListen)
-        buttonPressToListen.addTarget(self, action: #selector(onButtonPressToListenTapped), for: .touchUpInside)
-    }
-    
-    @objc func onButtonReferenceNoteTapped(_ sender: UIButton) {
-        if sender.isSelected {
-            sender.backgroundColor = UIColor(named: "AriettaBackgroundColor")
-            sender.isSelected = false
-        } else {
-            sender.backgroundColor = UIColor(named: "AriettaGreen")
-            sender.isSelected = true
-        }
-    }
-    
-    @objc func onButtonPressToListenTapped(_ sender: UIButton) {
-        if sender.isSelected {
-            sender.backgroundColor = UIColor(named: "AriettaButtonColor")
-            sender.isSelected = false
-        } else {
-            sender.backgroundColor = UIColor(named: "AriettaRed")
-            sender.isSelected = true
-        }
     }
     
     func setupKeyboard() {

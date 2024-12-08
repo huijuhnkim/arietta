@@ -12,9 +12,11 @@ class EarTrainingResultsViewController: UIViewController {
     let ETResultsView = EarTrainingResultsView()
     
     var score: Int
+    var selectedDifficulty: Int
   
-    init(score: Int) {
+    init(score: Int, selectedDifficulty: Int) {
         self.score = score
+        self.selectedDifficulty = selectedDifficulty
         super.init(nibName: nil, bundle: nil)
     }
 

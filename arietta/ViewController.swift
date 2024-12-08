@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     let homeView = HomeView()
     let SRlevelView = SightReadingChooseLevelView()
     let SRExerciseView = SightReadingExerciseView()
+    let SRResultsView = SightReadingResultsView()
     
     override func loadView() {
         view = homeView
@@ -23,6 +24,7 @@ class ViewController: UIViewController {
         
         homeView.buttonEarTraining.addTarget(self, action: #selector(handleButtonEarTraining), for: .touchUpInside)
         homeView.buttonSightReading.addTarget(self, action: #selector (handleButtonSightReading), for: .touchUpInside)
+        homeView.buttonProfile.addTarget(self, action: #selector(handleButtonProfile), for: .touchUpInside)
     }
     
     @objc func handleButtonEarTraining() {
@@ -33,6 +35,11 @@ class ViewController: UIViewController {
     @objc func handleButtonSightReading() {
         let SRChooseLevelVC = SightReadingChooseLevelViewController()
         navigationController?.pushViewController(SRChooseLevelVC, animated: true)
+    }
+    
+    @objc func handleButtonProfile() {
+        let profileVC = ProfileViewController()
+        navigationController?.pushViewController(profileVC, animated: true)
     }
     
     override func viewDidLoad() {

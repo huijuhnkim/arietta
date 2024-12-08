@@ -6,7 +6,7 @@
         },
         {
             "score": "level1_2.png",
-            "notes": ["F", "G", "A", "Bb"]
+            "notes": ["F", "G", "A", "A♯/B♭"]
         },
         {
             "score": "level1_3.png",
@@ -64,15 +64,15 @@
         },
         {
             "score": "level2_4.png",
-            "notes": ["D", "E", "F#", "G"]
+            "notes": ["D", "E", "F♯/G♭", "G"]
         },
         {
             "score": "level2_5.png",
-            "notes": ["E", "F#", "Ab", "A"]
+            "notes": ["E", "F♯/G♭", "G♯/A♭", "A"]
         },
         {
             "score": "level2_6.png",
-            "notes": ["F", "G", "A", "Bb"]
+            "notes": ["F", "G", "A", "A♯/B♭"]
         },
         {
             "score": "level2_7.png",
@@ -80,11 +80,11 @@
         },
         {
             "score": "level2_8.png",
-            "notes": ["A", "B", "C#", "D"]
+            "notes": ["A", "B", "C♯/D♭", "D"]
         },
         {
             "score": "level2_9.png",
-            "notes": ["B", "C#", "Eb", "E"]
+            "notes": ["B", "C♯/D♭", "D♯/E♭", "E"]
         },
         {
             "score": "level2_10.png",
@@ -92,15 +92,15 @@
         },
         {
             "score": "level2_11.png",
-            "notes": ["D", "F#", "E", "G"]
+            "notes": ["D", "F♯/G♭", "E", "G"]
         },
         {
             "score": "level2_12.png",
-            "notes": ["E", "Ab", "F#", "A"]
+            "notes": ["E", "G♯/A♭", "F♯/G♭", "A"]
         },
         {
             "score": "level2_13.png",
-            "notes": ["F", "A", "G", "Bb"]
+            "notes": ["F", "A", "G", "A♯/B♭"]
         },
         {
             "score": "level2_14.png",
@@ -108,11 +108,11 @@
         },
         {
             "score": "level2_15.png",
-            "notes": ["A", "C#", "B", "D"]
+            "notes": ["A", "C♯/D♭", "B", "D"]
         },
         {
             "score": "level2_16.png",
-            "notes": ["B", "Eb", "C#", "E"]
+            "notes": ["B", "D♯/E♭", "C♯/D♭", "E"]
         },
         {
             "score": "level2_17.png",
@@ -120,11 +120,11 @@
         },
         {
             "score": "level2_18.png",
-            "notes": ["D", "A", "F#", "E"]
+            "notes": ["D", "A", "F♯/G♭", "E"]
         },
         {
             "score": "level2_19.png",
-            "notes": ["E", "B", "Ab", "F#"]
+            "notes": ["E", "B", "G♯/A♭", "F♯/G♭"]
         },
         {
             "score": "level2_20.png",
@@ -136,11 +136,11 @@
         },
         {
             "score": "level2_22.png",
-            "notes": ["A", "E", "C#", "B"]
+            "notes": ["A", "E", "C♯/D♭", "B"]
         },
         {
             "score": "level2_23.png",
-            "notes": ["B", "F#", "Eb", "C#"]
+            "notes": ["B", "F♯/G♭", "D♯/E♭", "C♯/D♭"]
         },
         {
             "score": "level2_24.png",
@@ -148,15 +148,15 @@
         },
         {
             "score": "level2_25.png",
-            "notes": ["A", "F#", "E", "D"]
+            "notes": ["A", "F♯/G♭", "E", "D"]
         },
         {
             "score": "level2_26.png",
-            "notes": ["B", "Ab", "F#", "E"]
+            "notes": ["B", "G♯/A♭", "F♯/G♭", "E"]
         },
         {
             "score": "level2_27.png",
-            "notes": ["B", "Ab", "F#", "E"]
+            "notes": ["B", "G♯/A♭", "F♯/G♭", "E"]
         },
         {
             "score": "level2_28.png",
@@ -168,33 +168,33 @@
         },
         {
             "score": "level2_30.png",
-            "notes": ["E", "C#", "B", "A"]
+            "notes": ["E", "C♯/D♭", "B", "A"]
         },
         {
             "score": "level2_31.png",
-            "notes": ["F#", "E", "C#", "B"]
+            "notes": ["F♯/G♭", "E", "C♯/D♭", "B"]
         }
     ],
     "level3":[
         {
             "score": "level3_1.png",
-            "notes": ["C", "D", "Ab", "G"]
+            "notes": ["C", "D", "G♯/A♭", "G"]
         },
         {
             "score": "level3_2.png",
-            "notes": ["D", "E", "Bb", "A"]
+            "notes": ["D", "E", "A♯/B♭", "A"]
         },
         {
             "score": "level3_3.png",
-            "notes": ["E", "F#", "C", "B"]
+            "notes": ["E", "F♯/G♭", "C", "B"]
         },
         {
             "score": "level3_4.png",
-            "notes": ["F", "G", "C#", "C"]
+            "notes": ["F", "G", "C♯/D♭", "C"]
         },
         {
             "score": "level3_5.png",
-            "notes": ["G", "A", "Eb", "D"]
+            "notes": ["G", "A", "D♯/E♭", "D"]
         },
         {
             "score": "level3_6.png",
@@ -202,79 +202,79 @@
         },
         {
             "score": "level3_7.png",
-            "notes": ["B", "C#", "G", "F#"]
+            "notes": ["B", "C♯/D♭", "G", "F♯/G♭"]
         },
         {
             "score": "level3_8.png",
-            "notes": ["C", "E", "C#", "D"]
+            "notes": ["C", "E", "C♯/D♭", "D"]
         },
         {
             "score": "level3_9.png",
-            "notes": ["D", "F#", "Eb", "E"]
+            "notes": ["D", "F♯/G♭", "D♯/E♭", "E"]
         },
         {
             "score": "level3_10.png",
-            "notes": ["E", "Ab", "F", "F#"]
+            "notes": ["E", "G♯/A♭", "F", "F♯/G♭"]
         },
         {
             "score": "level3_11.png",
-            "notes": ["F", "A", "F#", "G"]
+            "notes": ["F", "A", "F♯/G♭", "G"]
         },
         {
             "score": "level3_12.png",
-            "notes": ["G", "B", "Ab", "A"]
+            "notes": ["G", "B", "G♯/A♭", "A"]
         },
         {
             "score": "level3_13.png",
-            "notes": ["A", "C#", "Bb", "B"]
+            "notes": ["A", "C♯/D♭", "A♯/B♭", "B"]
         },
         {
             "score": "level3_14.png",
-            "notes": ["B", "Eb", "A", "A#"]
+            "notes": ["B", "D♯/E♭", "A", "A♯/B♭"]
         },
         {
             "score": "level3_15.png",
-            "notes": ["C", "G", "F#", "E"]
+            "notes": ["C", "G", "F♯/G♭", "E"]
         },
         {
             "score": "level3_16.png",
-            "notes": ["D", "A", "Ab", "G"]
+            "notes": ["D", "A", "G♯/A♭", "G"]
         },
         {
             "score": "level3_17.png",
-            "notes": ["E", "B", "Bb", "A"]
+            "notes": ["E", "B", "A♯/B♭", "A"]
         },
         {
             "score": "level3_18.png",
-            "notes": ["F", "C", "B", "Bb"]
+            "notes": ["F", "C", "B", "A♯/B♭"]
         },
         {
             "score": "level3_19.png",
-            "notes": ["G", "D", "C#", "C"]
+            "notes": ["G", "D", "C♯/D♭", "C"]
         },
         {
             "score": "level3_20.png",
-            "notes": ["A", "E", "Eb", "D"]
+            "notes": ["A", "E", "D♯/E♭", "D"]
         },
         {
             "score": "level3_21.png",
-            "notes": ["B", "F#", "F", "E"]
+            "notes": ["B", "F♯/G♭", "F", "E"]
         },
         {
             "score": "level3_22.png",
-            "notes": ["G", "Ab", "Eb", "E"]
+            "notes": ["G", "G♯/A♭", "D♯/E♭", "E"]
         },
         {
             "score": "level3_23.png",
-            "notes": ["A", "Bb", "F", "F#"]
+            "notes": ["A", "A♯/B♭", "F", "F♯/G♭"]
         },
         {
             "score": "level3_24.png",
-            "notes": ["A", "Bb", "F", "F#"]
+            "notes": ["A", "A♯/B♭", "F", "F♯/G♭"]
         },
         {
             "score": "level3_25.png",
-            "notes": ["B", "C", "G", "Ab"]
+            "notes": ["B", "C", "G", "G♯/A♭"]
         }
     ]
 }

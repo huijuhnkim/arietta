@@ -15,12 +15,13 @@ class SightReadingExerciseViewController: UIViewController {
     var isRecording = false
     var noteRecognizer: NoteRecognizer!
     var level = 1
+    var result = 4
     
     var scores: Scores?
     var notes = ["C", "D", "E", "F"]
     
     var arrowLayer: CAShapeLayer!
-    var noteXPositions: [CGFloat] = [325, 169, 236, 303] // adjust according to image 103 169 236 303 165 218 272
+    var noteXPositions: [CGFloat] = [165, 218, 272, 325] // adjust according to image 103 169 236 303 || 165 218 272 325
     let fixedYPosition: CGFloat = 373
     
     var currentNoteIndex = 0
@@ -96,7 +97,7 @@ class SightReadingExerciseViewController: UIViewController {
             noteRecognizer = NoteRecognizer()
             noteRecognizer.pitchTapUpdateHandler = { [weak self] note in
                 DispatchQueue.main.async {
-                    self?.SRExerciseView.pitchLabel.text = "Detected Note: \(note)"
+                    self?.SRExerciseView.pitchLabel.text = "\(note)"
                     print(note)
                     self?.updateNote(note)
                     self?.updateArrowPosition()
@@ -130,17 +131,35 @@ class SightReadingExerciseViewController: UIViewController {
     }
     
     private func updateNote(_ note: String){
-        if note == notes[currentNoteIndex]{
-            updateArrowPosition()
+        if currentNoteIndex >= 4 {
+            return
         }
+        var noteName = note.dropLast()
+        if noteName != notes[currentNoteIndex]{
+            self.result -= 1
+            DispatchQueue.main.async {
+                self.SRExerciseView.pitchLabel.textColor = UIColor.red
+                self.triggerFeedback()
+            }
+        }
+        currentNoteIndex += 1
+        updateArrowPosition()
+    }
+    
+    private func triggerFeedback() {
+        let feedbackGenerator = UINotificationFeedbackGenerator()
+        feedbackGenerator.notificationOccurred(.error)
     }
     
     private func updateArrowPosition() {
-        currentNoteIndex += 1
         if currentNoteIndex == 4{
-            //jump to score
-        }else{
-            currentNoteIndex = currentNoteIndex % 4
+            currentNoteIndex += 1
+            noteRecognizer.stop()
+            print(currentNoteIndex)
+            let resultVC = SightReadingResultsViewController()
+            resultVC.result = result
+            navigationController?.pushViewController(resultVC, animated: true)
+        }else if currentNoteIndex < 4{
             let xPosition = noteXPositions[currentNoteIndex]
             UIView.animate(withDuration: 0.5) {
                 self.arrowLayer.position = CGPoint(x: xPosition, y: self.fixedYPosition)

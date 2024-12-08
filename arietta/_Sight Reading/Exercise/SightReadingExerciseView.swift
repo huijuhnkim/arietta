@@ -39,13 +39,13 @@ class SightReadingExerciseView: UIView {
         addSubview(imageScore)
         
         // Pitch label
-                pitchLabel = UILabel()
-                pitchLabel.translatesAutoresizingMaskIntoConstraints = false
-                pitchLabel.numberOfLines = 0
-                pitchLabel.text = "Detected Note:   "
-                pitchLabel.textAlignment = .center
-                pitchLabel.font = UIFont.systemFont(ofSize: 24)
-                addSubview(pitchLabel)
+        pitchLabel = UILabel()
+        pitchLabel.translatesAutoresizingMaskIntoConstraints = false
+        pitchLabel.numberOfLines = 0
+        pitchLabel.text = ""
+        pitchLabel.textAlignment = .center
+        pitchLabel.font = UIFont.systemFont(ofSize: 24)
+        addSubview(pitchLabel)
         
     }
     

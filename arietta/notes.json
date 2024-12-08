@@ -108,7 +108,172 @@
         notes: ["A", "C#", "B", "D"]
     },
     {
-        score: "level2_10.png"
-        notes: ["D", "E", "F#", "G"]
+        score: "level2_16.png"
+        notes: ["B", "Eb", "C#", "E"]
+    },
+    {
+        score: "level2_17.png"
+        notes: ["C", "G", "E", "C"]
+    },
+    {
+        score: "level2_18.png"
+        notes: ["D", "A", "F#", "E"]
+    },
+    {
+        score: "level2_19.png"
+        notes: ["E", "B", "Ab", "F#"]
+    },
+    {
+        score: "level2_20.png"
+        notes: ["F", "C", "A", "G"]
+    },
+    {
+        score: "level2_21.png"
+        notes: ["G", "D", "B", "D"]
+    },
+    {
+        score: "level2_22.png"
+        notes: ["A", "E", "C#", "B"]
+    },
+    {
+        score: "level2_23.png"
+        notes: ["B", "F#", "Eb", "C#"]
+    },
+    {
+        score: "level2_24.png"
+        notes: ["G", "B", "D", "C"]
+    },
+    {
+        score: "level2_25.png"
+        notes: ["A", "F#", "E", "D"]
+    },
+    {
+        score: "level2_26.png"
+        notes: ["B", "Ab", "F#", "E"]
+    },
+    {
+        score: "level2_27.png"
+        notes: ["B", "Ab", "F#", "E"]
+    },
+    {
+        score: "level2_28.png"
+        notes: ["C", "A", "G", "F"]
+    },
+    {
+        score: "level2_29.png"
+        notes: ["D", "B", "A", "G"]
+    },
+    {
+        score: "level2_30.png"
+        notes: ["E", "C#", "B", "A"]
+    },
+    {
+        score: "level2_31.png"
+        notes: ["F#", "E", "C#", "B"]
+    },
+    {
+        score: "level2_27.png"
+        notes: ["B", "Ab", "F#", "E"]
+    },
+    {
+        score: "level3_1.png"
+        notes: ["C", "D", "Ab", "G"]
+    },
+    {
+        score: "level3_2.png"
+        notes: ["D", "E", "Bb", "A"]
+    },
+    {
+        score: "level3_3.png"
+        notes: ["E", "F#", "C", "B"]
+    },
+    {
+        score: "level3_4.png"
+        notes: ["F", "G", "C#", "C"]
+    },
+    {
+        score: "level3_5.png"
+        notes: ["G", "A", "Eb", "D"]
+    },
+    {
+        score: "level3_6.png"
+        notes: ["A", "B", "F", "E"]
+    },
+    {
+        score: "level3_7.png"
+        notes: ["B", "C#", "G", "F#"]
+    },
+    {
+        score: "level3_8.png"
+        notes: ["C", "E", "C#", "D"]
+    },
+    {
+        score: "level3_9.png"
+        notes: ["D", "F#", "Eb", "E"]
+    },
+    {
+        score: "level3_10.png"
+        notes: ["E", "Ab", "F", "F#"]
+    },
+    {
+        score: "level3_11.png"
+        notes: ["F", "A", "F#", "G"]
+    },
+    {
+        score: "level3_12.png"
+        notes: ["G", "B", "Ab", "A"]
+    },
+    {
+        score: "level3_13.png"
+        notes: ["A", "C#", "Bb", "B"]
+    },
+    {
+        score: "level3_14.png"
+        notes: ["B", "Eb", "A", "A#"]
+    },
+    {
+        score: "level3_15.png"
+        notes: ["C", "G", "F#", "E"]
+    },
+    {
+        score: "level3_16.png"
+        notes: ["D", "A", "Ab", "G"]
+    },
+    {
+        score: "level3_17.png"
+        notes: ["E", "B", "Bb", "A"]
+    },
+    {
+        score: "level3_18.png"
+        notes: ["F", "C", "B", "Bb"]
+    },
+    {
+        score: "level3_19.png"
+        notes: ["G", "D", "C#", "C"]
+    },
+    {
+        score: "level3_20.png"
+        notes: ["A", "E", "Eb", "D"]
+    },
+    {
+        score: "level3_21.png"
+        notes: ["B", "F#", "F", "E"]
+    },
+    {
+        score: "level3_22.png"
+        notes: ["G", "Ab", "Eb", "E"]
+    },
+    {
+        score: "level3_23.png"
+        notes: ["A", "Bb", "F", "F#"]
+    },
+    {
+        score: "level3_24.png"
+        notes: ["A", "Bb", "F", "F#"]
+    },
+    {
+        score: "level3_25.png"
+        notes: ["B", "C", "G", "Ab"]
     },
 }
+

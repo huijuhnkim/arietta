@@ -1,5 +1,5 @@
 {
-  "originHash" : "416a968dc281bacd8ca6329747895a25556ed95ca7c9826c4bfd48c4503950c3",
+  "originHash" : "acd6bb1df4d449896611d21e10b273ff1ca40df2bf1f9e2b1a6c6d7ef9f84188",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -35,6 +35,24 @@
       "state" : {
         "revision" : "58fa4a002028a2addf96466dd5ad68182e7d387e",
         "version" : "5.6.0"
+      }
+    },
+    {
+      "identity" : "audiokitui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AudioKit/AudioKitUI.git",
+      "state" : {
+        "revision" : "1a61e8a96c7ee24c3e5abe06dc3334a31fd7571d",
+        "version" : "0.3.7"
+      }
+    },
+    {
+      "identity" : "controls",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AudioKit/Controls.git",
+      "state" : {
+        "revision" : "4dd10370125af7f1e26d7a71b2c5929bb3c95087",
+        "version" : "1.1.4"
       }
     },
     {

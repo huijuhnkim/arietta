@@ -42,12 +42,14 @@ class SightReadingExerciseViewController: UIViewController {
         if isRecording {
             noteRecognizer.stop()
             SRExerciseView.buttonRecord.setTitle("Start Recording", for: .normal)
+            print("start")
             SRExerciseView.buttonRecord.backgroundColor = UIColor(named: "AriettaButtonColor")
             print("end")
             isRecording = false
         } else {
             noteRecognizer.start()
             SRExerciseView.buttonRecord.setTitle("Stop Recording", for: .normal)
+            print("stop")
             SRExerciseView.buttonRecord.backgroundColor = UIColor(named: "AriettaRed")
             print("start")
             isRecording = true
@@ -65,3 +67,4 @@ class SightReadingExerciseViewController: UIViewController {
     */
 
 }
+

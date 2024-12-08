@@ -93,8 +93,9 @@ class NoteRecognizer {
             }
         }
         let octave = Int(log2f(frequency / noteFrequencies[index]) * 12.0) / 12 + 4
-        print("\(noteNamesWithSharps[index])\(octave)")
-        return "\(noteNamesWithSharps[index])\(octave)"
+        // print("\(noteNamesWithSharps[index])\(octave)")
+        // return "\(noteNamesWithSharps[index])\(octave)"
+        return "\(noteNamesWithSharps[index])"
     }
     
     private func requestMicrophoneAccess(completion: @escaping (Bool) -> Void) {

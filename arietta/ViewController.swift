@@ -29,8 +29,6 @@ class ViewController: UIViewController {
         
         homeView.buttonEarTraining.addTarget(self, action: #selector(handleButtonEarTraining), for: .touchUpInside)
         homeView.buttonSightReading.addTarget(self, action: #selector (handleButtonSightReading), for: .touchUpInside)
-        
-        //testing signin
         homeView.buttonProgressReport.addTarget(self, action: #selector (handleButtonProgressReport), for: .touchUpInside)
     }
     
@@ -81,8 +79,6 @@ class ViewController: UIViewController {
     }
     
     @objc func handleButtonProgressReport() {
-        let signinVC = SignInViewController()
-        navigationController?.pushViewController(signinVC, animated: true)
     }
     
     override func viewDidLoad() {

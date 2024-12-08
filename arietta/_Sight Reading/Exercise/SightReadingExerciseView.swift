@@ -42,7 +42,7 @@ class SightReadingExerciseView: UIView {
                 pitchLabel = UILabel()
                 pitchLabel.translatesAutoresizingMaskIntoConstraints = false
                 pitchLabel.numberOfLines = 0
-                pitchLabel.text = "Pitch: -- Hz\nAmplitude: --"
+                pitchLabel.text = "Detected Note:   "
                 pitchLabel.textAlignment = .center
                 pitchLabel.font = UIFont.systemFont(ofSize: 24)
                 addSubview(pitchLabel)

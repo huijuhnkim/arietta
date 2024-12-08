@@ -1,4 +1,114 @@
 {
-    score: "level1_1.png"
-    notes: ["C", "D", "E", "F"]
+    {
+        score: "level1_1.png"
+        notes: ["C", "D", "E", "F"]
+    },
+    {
+        score: "level1_2.png"
+        notes: ["F", "G", "A", "Bb"]
+    },
+    {
+        score: "level1_3.png"
+        notes: ["D", "B", "A", "G"]
+    },
+    {
+        score: "level1_4.png"
+        notes: ["G", "A", "B", "C"]
+    },
+    {
+        score: "level1_5.png"
+        notes: ["C", "E", "D", "C"]
+    },
+    {
+        score: "level1_6.png"
+        notes: ["F", "A", "G", "F"]
+    },
+    {
+        score: "level1_7.png"
+        notes: ["G", "B", "A", "G"]
+    },
+    {
+        score: "level1_8.png"
+        notes: ["C", "G", "E", "G"]
+    },
+    {
+        score: "level1_9.png"
+        notes: ["F", "C", "A", "C"]
+    },
+    {
+        score: "level1_10.png"
+        notes: ["G", "D", "B", "D"]
+    },
+    {
+        score: "level1_11.png"
+        notes: ["G", "E", "D", "C"]
+    },
+    {
+        score: "level1_12.png"
+        notes: ["C", "A", "G", "F"]
+    },
+    {
+        score: "level2_1.png"
+        notes: ["C", "D", "E", "F"]
+    },
+    {
+        score: "level2_2.png"
+        notes: ["C", "D", "E", "F"]
+    },
+    {
+        score: "level2_3.png"
+        notes: ["C", "D", "E", "F"]
+    },
+    {
+        score: "level2_4.png"
+        notes: ["D", "E", "F#", "G"]
+    },
+    {
+        score: "level2_5.png"
+        notes: ["E", "F#", "Ab", "A"]
+    },
+    {
+        score: "level2_6.png"
+        notes: ["F", "G", "A", "Bb"]
+    },
+    {
+        score: "level2_7.png"
+        notes: ["G", "A", "B", "C"]
+    },
+    {
+        score: "level2_8.png"
+        notes: ["A", "B", "C#", "D"]
+    },
+    {
+        score: "level2_9.png"
+        notes: ["B", "C#", "Eb", "E"]
+    },
+    {
+        score: "level2_10.png"
+        notes: ["C", "E", "D", "F"]
+    },
+    {
+        score: "level2_11.png"
+        notes: ["D", "F#", "E", "G"]
+    },
+    {
+        score: "level2_12.png"
+        notes: ["E", "Ab", "F#", "A"]
+    },
+    {
+        score: "level2_13.png"
+        notes: ["F", "A", "G", "Bb"]
+    },
+    {
+        score: "level2_14.png"
+        notes: ["G", "B", "A", "C"]
+    },
+    {
+        score: "level2_15.png"
+        notes: ["A", "C#", "B", "D"]
+    },
+    {
+        score: "level2_10.png"
+        notes: ["D", "E", "F#", "G"]
+    },
 }

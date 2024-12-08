@@ -15,6 +15,7 @@ class SignInView: UIView {
     var textFieldPassword: UITextField!
     
     var buttonSignIn: UIButton!
+    var buttonSignUp: UIButton!
     var buttonForgotPassword: UIButton!
     
     override init(frame: CGRect) {
@@ -53,6 +54,12 @@ class SignInView: UIView {
         buttonSignIn = UtilityFunctions.getFilledButton(title: "Sign In")
         addSubview(buttonSignIn)
         
+        buttonSignUp = UIButton()
+        buttonSignUp.translatesAutoresizingMaskIntoConstraints = false
+        buttonSignUp.setAttributedTitle(
+            UtilityFunctions.attributedBlackBodyText(text: "New User?", fontSize: 18), for: .normal)
+        addSubview(buttonSignUp)
+        
         buttonForgotPassword = UIButton()
         buttonForgotPassword.translatesAutoresizingMaskIntoConstraints = false
         buttonForgotPassword.setAttributedTitle(
@@ -77,8 +84,11 @@ class SignInView: UIView {
             buttonForgotPassword.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             buttonForgotPassword.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -54),
             
+            buttonSignUp.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            buttonSignUp.bottomAnchor.constraint(equalTo: buttonForgotPassword.topAnchor, constant: -24),
+            
             buttonSignIn.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            buttonSignIn.bottomAnchor.constraint(equalTo: buttonForgotPassword.topAnchor, constant: -24)
+            buttonSignIn.bottomAnchor.constraint(equalTo: buttonSignUp.topAnchor, constant: -24)
         ])
     }
 }

@@ -15,6 +15,8 @@ class SightReadingChooseLevelView: UIView {
     var buttonLevelThree: UIButton!
     var buttonStart: UIButton!
     
+    var level: Int = 1
+    
     private var activeButton: UIButton!
     
     override init(frame: CGRect) {
@@ -80,6 +82,15 @@ class SightReadingChooseLevelView: UIView {
         
         // Update active button
         activeButton = sender
+        
+        // Update level based on the button tapped
+        if sender == buttonLevelOne {
+            level = 1
+        } else if sender == buttonLevelTwo {
+            level = 2
+        } else if sender == buttonLevelThree {
+            level = 3
+        }
     }
     
     func initConstraints() {

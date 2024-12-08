@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81D300892D05111E001386A1 /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 81D300882D05111E001386A1 /* SoundpipeAudioKit */; };
 		81D3FF882D0367D9001386A1 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 81D3FF872D0367D9001386A1 /* FirebaseAuth */; };
 		81D3FF8A2D0367D9001386A1 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 81D3FF892D0367D9001386A1 /* FirebaseFirestore */; };
 		81D3FF8C2D0367D9001386A1 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 81D3FF8B2D0367D9001386A1 /* FirebaseStorage */; };
+		81D3FFE32D03FB36001386A1 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 81D3FFE22D03FB36001386A1 /* AudioKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +45,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				81D3FF882D0367D9001386A1 /* FirebaseAuth in Frameworks */,
+				81D300892D05111E001386A1 /* SoundpipeAudioKit in Frameworks */,
 				81D3FF8A2D0367D9001386A1 /* FirebaseFirestore in Frameworks */,
+				81D3FFE32D03FB36001386A1 /* AudioKit in Frameworks */,
 				81D3FF8C2D0367D9001386A1 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +94,8 @@
 				81D3FF872D0367D9001386A1 /* FirebaseAuth */,
 				81D3FF892D0367D9001386A1 /* FirebaseFirestore */,
 				81D3FF8B2D0367D9001386A1 /* FirebaseStorage */,
+				81D3FFE22D03FB36001386A1 /* AudioKit */,
+				81D300882D05111E001386A1 /* SoundpipeAudioKit */,
 			);
 			productName = arietta;
 			productReference = F47358742CED6FA6000CF4EC /* arietta.app */;
@@ -121,6 +127,8 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				81D3FF862D0367D9001386A1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				81D3FFE12D03FB36001386A1 /* XCRemoteSwiftPackageReference "AudioKit" */,
+				81D300872D05111E001386A1 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F47358752CED6FA6000CF4EC /* Products */;
@@ -160,7 +168,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4JPFXJ987R;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = arietta/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -188,7 +196,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4JPFXJ987R;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = arietta/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -352,6 +360,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		81D300872D05111E001386A1 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/SoundpipeAudioKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.1;
+			};
+		};
 		81D3FF862D0367D9001386A1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -360,9 +376,22 @@
 				minimumVersion = 11.6.0;
 			};
 		};
+		81D3FFE12D03FB36001386A1 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		81D300882D05111E001386A1 /* SoundpipeAudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 81D300872D05111E001386A1 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */;
+			productName = SoundpipeAudioKit;
+		};
 		81D3FF872D0367D9001386A1 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 81D3FF862D0367D9001386A1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
@@ -377,6 +406,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 81D3FF862D0367D9001386A1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		81D3FFE22D03FB36001386A1 /* AudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 81D3FFE12D03FB36001386A1 /* XCRemoteSwiftPackageReference "AudioKit" */;
+			productName = AudioKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

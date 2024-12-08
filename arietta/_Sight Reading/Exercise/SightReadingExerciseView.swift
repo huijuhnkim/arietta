@@ -12,6 +12,7 @@ class SightReadingExerciseView: UIView {
     var imageScore: UIImageView!
     var buttonReferenceNote: UIButton!
     var buttonRecord: UIButton!
+    var pitchLabel: UILabel!
     
     private var buttonReferenceNoteIsActive = false
     private var buttonRecordIsActive = false
@@ -36,6 +37,16 @@ class SightReadingExerciseView: UIView {
         imageScore.contentMode = .scaleAspectFit
         imageScore.clipsToBounds = true
         addSubview(imageScore)
+        
+        // Pitch label
+                pitchLabel = UILabel()
+                pitchLabel.translatesAutoresizingMaskIntoConstraints = false
+                pitchLabel.numberOfLines = 0
+                pitchLabel.text = "Pitch: -- Hz\nAmplitude: --"
+                pitchLabel.textAlignment = .center
+                pitchLabel.font = UIFont.systemFont(ofSize: 24)
+                addSubview(pitchLabel)
+        
     }
     
     func setupButtonReferenceNote() {
@@ -79,6 +90,9 @@ class SightReadingExerciseView: UIView {
             imageScore.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             imageScore.topAnchor.constraint(equalTo: self.topAnchor, constant: 330),
             imageScore.widthAnchor.constraint(equalToConstant: 330),
+            
+            pitchLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            pitchLabel.topAnchor.constraint(equalTo: imageScore.bottomAnchor, constant: 30),
             
             buttonRecord.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             buttonRecord.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -32),

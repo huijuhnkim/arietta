@@ -6,10 +6,15 @@
 //
 
 import UIKit
+import AudioKit
 
 class SightReadingExerciseViewController: UIViewController {
 
     let SRExerciseView = SightReadingExerciseView()
+    
+    var isRecording = false
+    
+    var noteRecognizer: NoteRecognizer!
     
     override func loadView() {
         view = SRExerciseView
@@ -17,10 +22,37 @@ class SightReadingExerciseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureNoteRecognizer()
 
         // Do any additional setup after loading the view.
+        SRExerciseView.buttonRecord.addTarget(self, action: #selector(toggleRecording), for: .touchUpInside)
     }
     
+    private func configureNoteRecognizer() {
+            noteRecognizer = NoteRecognizer()
+            noteRecognizer.pitchTapUpdateHandler = { [weak self] note in
+                DispatchQueue.main.async {
+                    self?.SRExerciseView.pitchLabel.text = "Detected Note: \(note)"
+                }
+            }
+        }
+    
+    
+    @objc func toggleRecording(_ sender: UIButton) {
+        if isRecording {
+            noteRecognizer.stop()
+            SRExerciseView.buttonRecord.setTitle("Start Recording", for: .normal)
+            SRExerciseView.buttonRecord.backgroundColor = UIColor(named: "AriettaButtonColor")
+            print("end")
+            isRecording = false
+        } else {
+            noteRecognizer.start()
+            SRExerciseView.buttonRecord.setTitle("Stop Recording", for: .normal)
+            SRExerciseView.buttonRecord.backgroundColor = UIColor(named: "AriettaRed")
+            print("start")
+            isRecording = true
+        }
+    }
 
     /*
     // MARK: - Navigation

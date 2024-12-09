@@ -281,7 +281,14 @@ class EarTrainingExerciseViewController: UIViewController {
                print("Error: Current user is nil. Cannot fetch Firestore data.\(currentUser)")
                return
            }
-        let result = ETResult(date: Date(), difficulty: difficulty, score: score)
+        
+        // format the date
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"  
+        let formattedDate = dateFormatter.string(from: currentDate)
+        
+        let result = ETResult(date: formattedDate, difficulty: difficulty, score: score)
         
         let collectionMessages =
         self.database.collection("users")

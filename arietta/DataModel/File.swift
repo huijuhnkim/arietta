@@ -7,11 +7,11 @@
 
 import Foundation
 struct ETResult: Codable {
-    let date: Date
+    let date: String
     let difficulty: Int
     let score: Int
     
-    init(date:Date, difficulty: Int, score: Int){
+    init(date:String, difficulty: Int, score: Int){
         self.date = date
         self.difficulty = difficulty
         self.score = score

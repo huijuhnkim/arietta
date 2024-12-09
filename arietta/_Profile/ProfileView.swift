@@ -13,10 +13,11 @@ class ProfileView: UIView {
     var buttonProfilePicture: UIButton!
     var imageProfilePicture: UIImage!
     var labelEditProfilePicture: UILabel!
-    var labelFirstName: UILabel!
-    var labelLastName: UILabel!
+    var labelUsername: UILabel!
     var labelEmail: UILabel!
+    var buttonSignOut: UIButton!
     var labelProgressReport: UILabel!
+    var tableViewResults: UITableView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -51,25 +52,31 @@ class ProfileView: UIView {
         stackProfilePicture.addArrangedSubview(labelEditProfilePicture)
         addSubview(stackProfilePicture)
         
-        labelFirstName = UILabel()
-        labelFirstName.translatesAutoresizingMaskIntoConstraints = false
-        labelFirstName.attributedText = UtilityFunctions.attributedNavigationTitle(text: "John")
-        addSubview(labelFirstName)
-        
-        labelLastName = UILabel()
-        labelLastName.translatesAutoresizingMaskIntoConstraints = false
-        labelLastName.attributedText = UtilityFunctions.attributedNavigationTitle(text: "Doe")
-        addSubview(labelLastName)
+        labelUsername = UILabel()
+        labelUsername.translatesAutoresizingMaskIntoConstraints = false
+        labelUsername.attributedText = UtilityFunctions.attributedNavigationTitle(text: "John")
+        addSubview(labelUsername)
         
         labelEmail = UILabel()
         labelEmail.translatesAutoresizingMaskIntoConstraints = false
         labelEmail.attributedText = UtilityFunctions.attributedBlackBodyText(text: "johndoe@gmail.com", fontSize: 18)
         addSubview(labelEmail)
         
+        buttonSignOut = UIButton(type: .system)
+        buttonSignOut.translatesAutoresizingMaskIntoConstraints = false
+        buttonSignOut.tintColor = .blue
+        buttonSignOut.setTitle("sign out", for: .normal)
+        addSubview(buttonSignOut)
+        
         labelProgressReport = UILabel()
         labelProgressReport.translatesAutoresizingMaskIntoConstraints = false
         labelProgressReport.attributedText = UtilityFunctions.attributedNavigationTitle(text: "Progress Report")
         addSubview(labelProgressReport)
+        
+        tableViewResults = UITableView()
+        tableViewResults.register(ProgressTableViewCell.self, forCellReuseIdentifier: "result")
+        tableViewResults.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(tableViewResults)
     }
     
     func initConstraints() {
@@ -79,17 +86,22 @@ class ProfileView: UIView {
             stackProfilePicture.widthAnchor.constraint(equalToConstant: 72),
             stackProfilePicture.heightAnchor.constraint(equalToConstant: 72),
             
-            labelFirstName.topAnchor.constraint(equalTo: self.topAnchor, constant: 140),
-            labelFirstName.leadingAnchor.constraint(equalTo: stackProfilePicture.trailingAnchor, constant: 39),
+            labelUsername.topAnchor.constraint(equalTo: self.topAnchor, constant: 140),
+            labelUsername.leadingAnchor.constraint(equalTo: stackProfilePicture.trailingAnchor, constant: 39),
             
-            labelLastName.topAnchor.constraint(equalTo: self.topAnchor, constant: 170),
-            labelLastName.leadingAnchor.constraint(equalTo: labelFirstName.leadingAnchor),
+            labelEmail.topAnchor.constraint(equalTo: labelUsername.bottomAnchor, constant: 6),
+            labelEmail.leadingAnchor.constraint(equalTo: labelUsername.leadingAnchor),
             
-            labelEmail.topAnchor.constraint(equalTo: self.topAnchor, constant: 206),
-            labelEmail.leadingAnchor.constraint(equalTo: labelFirstName.leadingAnchor),
+            buttonSignOut.topAnchor.constraint(equalTo: labelEmail.bottomAnchor, constant: 6),
+            buttonSignOut.leadingAnchor.constraint(equalTo: labelUsername.leadingAnchor),
             
             labelProgressReport.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            labelProgressReport.topAnchor.constraint(equalTo: stackProfilePicture.bottomAnchor, constant: 105)
+            labelProgressReport.topAnchor.constraint(equalTo: stackProfilePicture.bottomAnchor, constant: 105),
+            
+            tableViewResults.topAnchor.constraint(equalTo: labelProgressReport.bottomAnchor, constant: 16),
+            tableViewResults.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            tableViewResults.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            tableViewResults.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20)
         ])
     }
     

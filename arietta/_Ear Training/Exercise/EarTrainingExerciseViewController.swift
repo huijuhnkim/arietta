@@ -41,6 +41,7 @@ class EarTrainingExerciseViewController: UIViewController {
         
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidLoad()
+        currentUser = Auth.auth().currentUser
             
         // setup play reference and press to listen note
         ETExercise.buttonReferenceNote.addTarget(self, action: #selector(playReferenceNote), for: .touchUpInside)

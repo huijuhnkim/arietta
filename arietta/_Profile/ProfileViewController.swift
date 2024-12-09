@@ -12,15 +12,41 @@ class ProfileViewController: UIViewController {
     
     let profileView = ProfileView()
     
+    var handleAuth: AuthStateDidChangeListenerHandle?
+    var currentUser:FirebaseAuth.User?
+    
     override func loadView() {
         view = profileView
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            
+            //MARK: handling if the Authentication state is changed (sign in, sign out, register)...
+            handleAuth = Auth.auth().addStateDidChangeListener{ auth, user in
+                if user == nil {
+                    //MARK: not signed in...
+                    self.currentUser = nil
+                    let launchVC = LaunchViewController()
+                    self.navigationController?.pushViewController(launchVC, animated: true)
+                    
+                } else {
+                    self.profileView.labelUsername.text = user?.displayName
+                    self.profileView.labelEmail.text = user?.email
+                }
+            }
+        }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         profileView.buttonSignOut.addTarget(self, action: #selector(onButtonSignOutTapped), for: .touchUpInside)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+            super.viewWillDisappear(animated)
+            Auth.auth().removeStateDidChangeListener(handleAuth!)
+        }
     
     @objc func onButtonSignOutTapped() {
         let logoutAlert = UIAlertController(title: "Sign Out", message: "Are you sure want to sign out?",

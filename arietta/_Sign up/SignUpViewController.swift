@@ -2,7 +2,7 @@
 //  SignUpViewController.swift
 //  arietta
 //
-//  Created by Hui Juhn Kim on 12/2/24.
+//  Created by Charles Yang on 12/8/24.
 //
 
 import UIKit
@@ -44,7 +44,7 @@ class SignUpViewController: UIViewController {
     
     
     @objc func onButtonSignUpTapped(){
-        // showActivityIndicator()
+        showActivityIndicator()
         
         if let username = signUpView.textFieldUserName.text,
            let email = signUpView.textFieldEmail.text,
@@ -54,26 +54,26 @@ class SignUpViewController: UIViewController {
             // input validations
             if username.isEmpty || email.isEmpty || password.isEmpty || confirmPassword.isEmpty {
                 displayAlert(viewController: self, title: "Empty Fields", message: "There are empty fields. Please fill in all fields.")
-                // self.hideActivityIndicator()
+                self.hideActivityIndicator()
                 return
             }
             
             if !isValidEmail(email: email) {
                 displayAlert(viewController: self, title: "Invalid Email", message: "Email should be in proper format.")
-                // self.hideActivityIndicator()
+                self.hideActivityIndicator()
                 return
             }
             
             if password != confirmPassword {
                 displayAlert(viewController: self, title: "Password Mismatch", message: "Password does not match.")
-                // self.hideActivityIndicator()
+                self.hideActivityIndicator()
                 return
             }
             
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 if let error = error {
                     displayAlert(viewController: self, title: "Registration Error", message: error.localizedDescription)
-                    // self.hideActivityIndicator()
+                    self.hideActivityIndicator()
                 } else if let user = authResult?.user {
                     print("add user to fire store")
                     self.addUserToFirestore(user: user, name: username, email: email)
@@ -91,7 +91,7 @@ class SignUpViewController: UIViewController {
         ]) { error in
             if let error = error {
                 displayAlert(viewController: self, title: "Firestore Error", message: error.localizedDescription)
-                // self.hideActivityIndicator()
+                self.hideActivityIndicator()
             } else {
                 print("set name of the user in firebase auth")
                 // self.setNameOfTheUserInFirebaseAuth(name: name, user: user)
@@ -100,7 +100,7 @@ class SignUpViewController: UIViewController {
                 changeRequest.commitChanges { error in
                     if let error = error {
                         displayAlert(viewController: self, title: "Profile Update Error", message: error.localizedDescription)
-                        // self.hideActivityIndicator()
+                        self.hideActivityIndicator()
                     } else {
                         print("jump to main view")
                         if let viewControllers = self.navigationController?.viewControllers {

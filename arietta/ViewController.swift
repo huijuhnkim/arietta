@@ -42,8 +42,8 @@ class ViewController: UIViewController {
 
              if user == nil {
                  DispatchQueue.main.async {
-                     let signInViewController = SignInViewController()
-                     self.navigationController?.pushViewController(signInViewController, animated: true)
+                     let launchViewController = LaunchViewController()
+                     self.navigationController?.pushViewController(launchViewController, animated: true)
                  }
              } else {
                  self.currentUser = user
@@ -89,6 +89,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        Auth.auth().removeStateDidChangeListener(handleAuth!)
     }
 }
 

@@ -52,7 +52,7 @@ class ForgotPasswordViewController: UIViewController {
                 if let error = error {
                     displayAlert(viewController: self, title: "Error", message: error.localizedDescription)
                 } else {
-                    displayAlert(viewController: self, title: "Success", message: "A password reset link has been sent to your email address.")
+                    self.displaySuccessAndPop()
                 }
             }
         }
@@ -66,6 +66,15 @@ class ForgotPasswordViewController: UIViewController {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         return emailPred.evaluate(with: email)
+    }
+    
+    func displaySuccessAndPop() {
+        let alert = UIAlertController(title: "Success", message: "A password reset link has been sent to your email address.", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+            self?.navigationController?.popViewController(animated: true)
+        }
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
     
 }

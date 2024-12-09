@@ -17,6 +17,8 @@ class LaunchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.hidesBackButton = true
 
         launchView.buttonSignIn.addTarget(self, action: #selector(handleButtonSignIn), for: .touchUpInside)
         launchView.buttonSignUp.addTarget(self, action: #selector(handleButtonSignUp), for: .touchUpInside)

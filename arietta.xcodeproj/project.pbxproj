@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		812C23042D06A05C00DBEBF9 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 812C23032D06A05C00DBEBF9 /* FirebaseStorage */; };
 		81D309DA2D064557001386A1 /* AudioKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = 81D309D92D064557001386A1 /* AudioKitUI */; };
 		81D309DD2D06456C001386A1 /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 81D309DC2D06456C001386A1 /* SoundpipeAudioKit */; };
 		81D309E02D064584001386A1 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 81D309DF2D064584001386A1 /* AudioKit */; };
@@ -49,6 +50,7 @@
 				81D309E52D0645C3001386A1 /* FirebaseCore in Frameworks */,
 				81D309DD2D06456C001386A1 /* SoundpipeAudioKit in Frameworks */,
 				81D309DA2D064557001386A1 /* AudioKitUI in Frameworks */,
+				812C23042D06A05C00DBEBF9 /* FirebaseStorage in Frameworks */,
 				81D309E32D0645C3001386A1 /* FirebaseAuth in Frameworks */,
 				81D309E72D0645C3001386A1 /* FirebaseFirestore in Frameworks */,
 			);
@@ -99,6 +101,7 @@
 				81D309E22D0645C3001386A1 /* FirebaseAuth */,
 				81D309E42D0645C3001386A1 /* FirebaseCore */,
 				81D309E62D0645C3001386A1 /* FirebaseFirestore */,
+				812C23032D06A05C00DBEBF9 /* FirebaseStorage */,
 			);
 			productName = arietta;
 			productReference = F47358742CED6FA6000CF4EC /* arietta.app */;
@@ -399,6 +402,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		812C23032D06A05C00DBEBF9 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 81D309E12D0645C3001386A1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
 		81D309D92D064557001386A1 /* AudioKitUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 81D309D82D064557001386A1 /* XCRemoteSwiftPackageReference "AudioKitUI" */;

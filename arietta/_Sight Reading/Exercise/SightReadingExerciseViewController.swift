@@ -8,6 +8,8 @@
 import UIKit
 import AudioKit
 import AVFoundation
+import FirebaseAuth
+import FirebaseFirestore
 
 class SightReadingExerciseViewController: UIViewController {
 
@@ -28,9 +30,13 @@ class SightReadingExerciseViewController: UIViewController {
     
     var currentNoteIndex = 0
     
+    var currentUser:FirebaseAuth.User?
+    let database = Firestore.firestore()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadRandomImageForLevel()
+        currentUser = Auth.auth().currentUser
     }
     
     override func loadView() {
@@ -159,6 +165,7 @@ class SightReadingExerciseViewController: UIViewController {
             currentNoteIndex += 1
             noteRecognizer.stop()
             print(currentNoteIndex)
+            saveResult(difficulty: level, score: result)
             let resultVC = SightReadingResultsViewController()
             resultVC.result = result
             navigationController?.pushViewController(resultVC, animated: true)
@@ -220,6 +227,33 @@ class SightReadingExerciseViewController: UIViewController {
         }
         catch {
             print("Error. Cannot play audio file.")
+        }
+    }
+    
+    func saveResult(difficulty: Int, score: Int) {
+        guard let userId = currentUser?.uid else {
+            print("Error: Current user is nil. Cannot fetch Firestore data.")
+            return
+        }
+        let result = Result(date: Date(), difficulty: difficulty, score: score)
+            
+        let collectionMessages =
+        self.database.collection("users")
+            .document(currentUser?.uid ?? "")
+            .collection("sightReadingResults")
+            
+        do{
+            try collectionMessages.addDocument(from: result, completion: {(error) in
+                if error == nil{
+                    print("Result saved successfully.")
+                }
+                else{
+                    print("Error adding document:")
+                }
+            })
+        }
+        catch {
+            print("Error adding result.")
         }
     }
 

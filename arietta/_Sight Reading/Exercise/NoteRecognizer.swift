@@ -21,8 +21,7 @@ class NoteRecognizer {
     private let noteStabilizationThreshold: Int = 3
     
     let noteFrequencies: [Float] = [16.35, 17.32, 18.35, 19.45, 20.6, 21.83, 23.12, 24.5, 25.96, 27.5, 29.14, 30.87]
-    let noteNamesWithSharps = ["C", "C♯/D♭", "D", "D♯/E♭", "E", "F", "F♯/G♭", "G", "G♯/A♭", "A", "A♯/B♭", "B"]
-    // let noteNamesWithFlats = ["C", "D♭", "D", "E♭", "E", "F", "G♭", "G", "A♭", "A", "B♭", "B"]
+    let noteNames = ["C", "C♯/D♭", "D", "D♯/E♭", "E", "F", "F♯/G♭", "G", "G♯/A♭", "A", "A♯/B♭", "B"]
 
     init() {
         requestMicrophoneAccess { [weak self] granted in
@@ -94,7 +93,7 @@ class NoteRecognizer {
         }
         let octave = Int(log2f(frequency / noteFrequencies[index]) * 12.0) / 12 + 4
         // print("\(noteNamesWithSharps[index])\(octave)")
-        return "\(noteNamesWithSharps[index])\(octave)"
+        return "\(noteNames[index])\(octave)"
     }
     
     private func requestMicrophoneAccess(completion: @escaping (Bool) -> Void) {

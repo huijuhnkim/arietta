@@ -7,6 +7,7 @@
 
 import UIKit
 import AudioKit
+import AVFoundation
 
 class SightReadingExerciseViewController: UIViewController {
 
@@ -17,6 +18,7 @@ class SightReadingExerciseViewController: UIViewController {
     var level = 1
     var result = 4
     
+    var audioPlayer: AVAudioPlayer?
     var scores: Scores?
     var notes = ["C", "D", "E", "F"]
     
@@ -28,7 +30,7 @@ class SightReadingExerciseViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // loadRandomImageForLevel()
+        loadRandomImageForLevel()
     }
     
     override func loadView() {
@@ -39,11 +41,12 @@ class SightReadingExerciseViewController: UIViewController {
         super.viewDidLoad()
         
         loadLevelsData()
-        // loadRandomImageForLevel()
+        loadRandomImageForLevel()
         
         configureNoteRecognizer()
         addArrow()
         SRExerciseView.buttonRecord.addTarget(self, action: #selector(toggleRecording), for: .touchUpInside)
+        SRExerciseView.buttonReferenceNote.addTarget(self, action: #selector(playReferenceNote), for: .touchUpInside)
     }
     
     func loadLevelsData() {
@@ -183,6 +186,40 @@ class SightReadingExerciseViewController: UIViewController {
             SRExerciseView.buttonRecord.backgroundColor = UIColor(named: "AriettaRed")
             print("start")
             isRecording = true
+        }
+    }
+    
+    // play reference note C
+    @objc func playReferenceNote(){
+        SRExerciseView.buttonReferenceNote.isSelected.toggle()
+        
+        if SRExerciseView.buttonReferenceNote.isSelected {
+            SRExerciseView.buttonReferenceNote.backgroundColor = UIColor(named: "AriettaGreen")
+            playNoteAudio(note: "referenceNote")
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
+                self.SRExerciseView.buttonReferenceNote.backgroundColor = UIColor(named:"AriettaBackgroundColor")
+                self.SRExerciseView.buttonReferenceNote.isSelected = false
+            }
+        } else {
+            SRExerciseView.buttonReferenceNote.backgroundColor = UIColor(named:"AriettaBackgroundColor")
+        }
+    }
+    
+    // play audio file with given note
+    func playNoteAudio(note: String){
+        guard let filePath = Bundle.main.path(forResource: note, ofType: "aif") else {
+            print("Audio file not found.")
+            return
+        }
+    
+        let url = URL(fileURLWithPath: filePath)
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.play()
+        }
+        catch {
+            print("Error. Cannot play audio file.")
         }
     }
 

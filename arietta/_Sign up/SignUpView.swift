@@ -63,7 +63,7 @@ class SignUpView: UIView {
         
         textFieldPassword = UtilityFunctions.getTextField(placeholder: "Enter Your Password")
         textFieldPassword.textContentType = .password
-        // textFieldPassword.isSecureTextEntry = true
+        textFieldPassword.isSecureTextEntry = true
         addSubview(textFieldPassword)
         
         labelConfirmPassword = UILabel()
@@ -73,7 +73,7 @@ class SignUpView: UIView {
         
         textFieldConfirmPassword = UtilityFunctions.getTextField(placeholder: "Re-enter Password")
         textFieldConfirmPassword.textContentType = .password
-        // textFieldConfirmPassword.isSecureTextEntry = true
+        textFieldConfirmPassword.isSecureTextEntry = true
         addSubview(textFieldConfirmPassword)
         
         buttonSignUp = UtilityFunctions.getFilledButton(title: "Sign Up")

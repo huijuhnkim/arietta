@@ -28,10 +28,16 @@ class HomeView: UIView {
     }
     
     func setup() {
-        labelQuote = UILabel()
+        labelQuote = UILabel(frame: CGRect(x: 32, y: 147, width: 328, height: 400))
         labelQuote.text = "Random quotes from musicians"
+        labelQuote.attributedText = UtilityFunctions.attributedBlackBodyText(text: "", fontSize: 36)
         labelQuote.textAlignment = .center
         labelQuote.translatesAutoresizingMaskIntoConstraints = false
+        labelQuote.lineBreakMode = .byWordWrapping
+        labelQuote.numberOfLines = 0
+        labelQuote.sizeToFit()
+        
+        
         self.addSubview(labelQuote)
         
         buttonSightReading = UtilityFunctions.getFilledButton(title: "Sight Reading")
@@ -47,7 +53,9 @@ class HomeView: UIView {
     func initConstraints() {
         NSLayoutConstraint.activate([
             labelQuote.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            labelQuote.centerYAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 200),
+            labelQuote.centerYAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 250),
+            labelQuote.widthAnchor.constraint(equalToConstant: 328),
+            labelQuote.heightAnchor.constraint(equalToConstant: 400),
             
             buttonProfile.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             buttonProfile.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -26),

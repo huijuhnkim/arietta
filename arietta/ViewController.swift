@@ -61,7 +61,7 @@ class ViewController: UIViewController {
                  if let quotes = dataDescription?.values.compactMap({ $0 as? String }) {
                      let randomQuote = quotes.randomElement() ?? "No quote found"
                      print("Random Quote: \(randomQuote)")
-                     self.homeView.labelQuote.text = randomQuote
+                     self.homeView.labelQuote.attributedText = UtilityFunctions.attributedBlackBodyText(text: randomQuote, fontSize: 36)
                  }
              } else {
                  print("Document does not exist or error: \(error?.localizedDescription ?? "unknown error")")

@@ -39,16 +39,17 @@ class EarTrainingResultsViewController: UIViewController {
         
     }
     
-    @objc func tapRetryButton(){
-        let ETChooseLevel = EarTrainingChooseLevelViewController()
-        navigationController?.pushViewController(ETChooseLevel, animated: true)
-            
+    @objc func tapRetryButton() {
+        if let viewControllers = self.navigationController?.viewControllers {
+            if viewControllers.count > 1 {
+                let SRlevelVC = viewControllers[1] //
+                self.navigationController?.popToViewController(SRlevelVC, animated: true)
+            }
+        }
     }
     
-    @objc func tapMenuButton(){
-        let homeView = ViewController()
-        navigationController?.pushViewController(homeView, animated: true)
-        
+    @objc func tapMenuButton() {
+        navigationController?.popToRootViewController(animated: true)
     }
     
     required init?(coder: NSCoder) {

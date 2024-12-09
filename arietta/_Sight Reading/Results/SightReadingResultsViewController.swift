@@ -26,8 +26,6 @@ class SightReadingResultsViewController: UIViewController {
     }
     
     @objc func onButtonRetryTapped() {
-//        let SRChooseLevelVC = SightReadingChooseLevelViewController()
-//        navigationController?.pushViewController(SRChooseLevelVC, animated: true)
         if let viewControllers = self.navigationController?.viewControllers {
             if viewControllers.count > 1 {
                 let SRlevelVC = viewControllers[1] //

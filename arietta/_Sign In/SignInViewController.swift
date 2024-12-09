@@ -86,7 +86,7 @@ class SignInViewController: UIViewController {
                 } else {
                     print("User signed in successfully.")
                     self.currentUser = authResult!.user
-                    self.navigationController?.popViewController(animated: true)
+                    self.navigationController?.popToRootViewController(animated: true)
                 }
             }
         }

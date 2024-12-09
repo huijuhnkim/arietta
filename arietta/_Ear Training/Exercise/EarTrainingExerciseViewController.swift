@@ -8,6 +8,8 @@
 
 import UIKit
 import AVFoundation
+import FirebaseAuth
+import FirebaseFirestore
 
 class EarTrainingExerciseViewController: UIViewController {
         
@@ -22,6 +24,9 @@ class EarTrainingExerciseViewController: UIViewController {
         
     let ETExercise = EarTrainingExerciseView()
     var audioPlayer: AVAudioPlayer?
+    
+    var currentUser:FirebaseAuth.User?
+    let database = Firestore.firestore()
         
     var selectedDifficulty: Int
     var score: Int = 0
@@ -34,8 +39,9 @@ class EarTrainingExerciseViewController: UIViewController {
         view = ETExercise
     }
         
-    override func viewDidLoad() {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewDidLoad()
+        currentUser = Auth.auth().currentUser
             
         // setup play reference and press to listen note
         ETExercise.buttonReferenceNote.addTarget(self, action: #selector(playReferenceNote), for: .touchUpInside)
@@ -121,12 +127,13 @@ class EarTrainingExerciseViewController: UIViewController {
         }
     }
      
-    // will keep going until user answered 1- questions
+    // will keep going until user answered 10 questions
     func nextQuestion(){
         if currentQuestion < 5 {
             currentQuestion += 1
             startNextQuestion()
             } else {
+                saveResult(difficulty: selectedDifficulty, score: score)
                 let resultsVC = EarTrainingResultsViewController(score: score, selectedDifficulty: selectedDifficulty)
                 navigationController?.pushViewController(resultsVC, animated: true)
                 }
@@ -266,5 +273,43 @@ class EarTrainingExerciseViewController: UIViewController {
             let alert = UIAlertController(title: "No Note Selected!", message: "Error! Must select a note before submitting!", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             self.present(alert, animated: true)
-            }
         }
+    
+    
+    func saveResult(difficulty: Int, score: Int) {
+        guard let userId = currentUser?.uid else {
+               print("Error: Current user is nil. Cannot fetch Firestore data.\(currentUser)")
+               return
+           }
+        
+        // format the date
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let formattedDate = dateFormatter.string(from: currentDate)
+        
+        let result = ETResult(date: formattedDate, difficulty: difficulty, score: score)
+        
+        let collectionMessages =
+        self.database.collection("users")
+            .document(currentUser?.uid ?? "")
+            .collection("earTrainingResults")
+        
+        do{
+            try collectionMessages.addDocument(from: result, completion: {(error) in
+                if error == nil{
+                    print("Result saved successfully.")
+                }
+                else{
+                    print("Error adding document:")
+                }
+            })
+        }
+        catch {
+            print("Error adding result.")
+        }
+    }
+     
+        }
+
+

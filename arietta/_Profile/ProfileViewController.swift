@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class ProfileViewController: UIViewController {
     
@@ -15,12 +16,19 @@ class ProfileViewController: UIViewController {
     var handleAuth: AuthStateDidChangeListenerHandle?
     var currentUser:FirebaseAuth.User?
     
+    var progress = [ETResult]()
+    let database = Firestore.firestore()
+
     override func loadView() {
         view = profileView
     }
     
     override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
+
+        
+        currentUser = Auth.auth().currentUser
+
             
             //MARK: handling if the Authentication state is changed (sign in, sign out, register)...
             handleAuth = Auth.auth().addStateDidChangeListener{ auth, user in
@@ -33,6 +41,26 @@ class ProfileViewController: UIViewController {
                 } else {
                     self.profileView.labelUsername.text = user?.displayName
                     self.profileView.labelEmail.text = user?.email
+                    
+                    
+                    self.database.collection("users")
+                        .document((self.currentUser?.uid)!)
+                        .collection("earTrainingResults")
+                        .addSnapshotListener(includeMetadataChanges: false, listener: {querySnapshot, error in
+                            if let documents = querySnapshot?.documents{
+                                self.progress.removeAll()
+                                for document in documents{
+                                    do{
+                                        let results = try document.data(as: ETResult.self)
+                                        self.progress.append(results)
+                                    }catch{
+                                        print(error)
+                                    }
+                                }
+                                self.profileView.tableViewResults.reloadData()
+                            }
+                        })
+
                 }
             }
         }
@@ -41,6 +69,11 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         
         profileView.buttonSignOut.addTarget(self, action: #selector(onButtonSignOutTapped), for: .touchUpInside)
+
+        
+        profileView.tableViewResults.delegate = self
+        profileView.tableViewResults.dataSource = self
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -62,5 +95,9 @@ class ProfileViewController: UIViewController {
         logoutAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         
         self.present(logoutAlert, animated: true)
+
     }
+
+    
 }
+

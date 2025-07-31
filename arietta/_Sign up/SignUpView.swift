@@ -68,7 +68,7 @@ class SignUpView: UIView {
         
         labelConfirmPassword = UILabel()
         labelConfirmPassword.translatesAutoresizingMaskIntoConstraints = false
-        labelConfirmPassword.attributedText = UtilityFunctions.attributedBlackBodyText(text: "Comfirm Password", fontSize: 18)
+        labelConfirmPassword.attributedText = UtilityFunctions.attributedBlackBodyText(text: "Confirm Password", fontSize: 18)
         addSubview(labelConfirmPassword)
         
         textFieldConfirmPassword = UtilityFunctions.getTextField(placeholder: "Re-enter Password")

@@ -43,4 +43,4 @@ iOS music education app for ear training and sight-reading practice.
 
 ## Contact
 
-Hui Juhn Kim - [LinkedIn](your-link) | [Portfolio](your-link)
+Hui Juhn Kim - [LinkedIn](https://www.linkedin.com/in/huijuhnkim/) | [Portfolio](https://huijuhnkim.github.io/my-github-pages-app/)

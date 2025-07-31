@@ -1,4 +1,4 @@
-# Arietta 🎵
+# Arietta
 
 iOS music education app for ear training and sight-reading practice.
 
